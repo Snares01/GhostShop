@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c1b0xa5p07tny"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 151.0
+offset_top = 87.0
+offset_right = 191.0
+offset_bottom = 110.0
+text = "hi
+
+this is the scene that will start when you press play"
