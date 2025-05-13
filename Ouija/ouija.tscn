@@ -1,0 +1,95 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkqk8g2d0yjys"]
+
+[ext_resource type="Script" uid="uid://bifyo3kcblqq2" path="res://Ouija/ouija.gd" id="1_vnu4c"]
+[ext_resource type="PackedScene" uid="uid://e4g4l5ngxfp4" path="res://Ouija/ouija_letter.tscn" id="2_yp53d"]
+
+[node name="Ouija" type="Node2D"]
+script = ExtResource("1_vnu4c")
+
+[node name="Revealed" type="Label" parent="."]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Letters" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="A" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(-300, -100)
+
+[node name="B" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(-250, -100)
+
+[node name="C" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(-200, -100)
+
+[node name="D" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(-150, -100)
+
+[node name="E" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(-100, -100)
+
+[node name="F" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(-50, -100)
+
+[node name="G" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(0, -100)
+
+[node name="H" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(50, -100)
+
+[node name="I" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(100, -100)
+
+[node name="J" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(150, -100)
+
+[node name="K" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(200, -100)
+
+[node name="L" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(250, -100)
+
+[node name="M" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(300, -100)
+
+[node name="N" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(-300, 100)
+
+[node name="O" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(-250, 100)
+
+[node name="P" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(-200, 100)
+
+[node name="Q" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(-150, 100)
+
+[node name="R" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(-100, 100)
+
+[node name="S" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(-50, 100)
+
+[node name="T" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(0, 100)
+
+[node name="U" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(50, 100)
+
+[node name="V" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(100, 100)
+
+[node name="W" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(150, 100)
+
+[node name="X" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(200, 100)
+
+[node name="Y" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(250, 100)
+
+[node name="Z" parent="Letters" instance=ExtResource("2_yp53d")]
+position = Vector2(300, 100)
+
+[node name="Camera2D" type="Camera2D" parent="."]
