@@ -3,7 +3,7 @@ class_name Ouija
 
 const LETTERS := "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-var riddle := "I'mm thirsty now, so hear my plea\nFill up a cup that's tall for me"
+var riddle := "I'm thirsty now, so hear my plea\nFill up a cup that's tall for me"
 var current_pos := 0 # Position in riddle string
 var prev_char: String
 
@@ -47,25 +47,3 @@ func _move_to_letter(letter: String) -> void:
 	while (LETTERS.find(next_char) == -1 and current_pos < riddle.length() - 1): # Not end of riddle
 		current_pos += 1
 		next_char = riddle.substr(current_pos, 1).to_upper()
-
-# Reveals next character in riddle
-# Returns true if riddle is finished
-func update_board() -> bool:
-	var next_char: String
-	# Get next character in string
-	# Skip repeated letters & non-letters, stop at end of string
-	while (LETTERS.find(next_char) == -1 or next_char == prev_char) and current_pos < riddle.length() - 1:
-		next_char = riddle.substr(current_pos, 1).to_upper()
-		current_pos += 1
-	# Update ouija board
-	#print(next_char + ".")
-	#prev_char = next_char
-	if next_char:
-		# Highlight new letter
-		var char_node: OuijaLetter = get_node("%Letters").get_node(next_char)
-		char_node.highlight()
-		return false
-	else:
-		# End reached
-		current_pos = riddle.length()
-		return true

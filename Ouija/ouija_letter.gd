@@ -28,7 +28,6 @@ func _draw() -> void:
 
 # Called by Ouija
 func highlight() -> void:
-	print(name + " highlight")
 	is_highlighted = true
 	queue_redraw()
 
