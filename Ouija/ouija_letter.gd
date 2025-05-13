@@ -7,12 +7,18 @@ const FONT := preload("res://RulerGold.ttf")
 const FONT_SIZE := 32
 
 var is_highlighted := false
+var was_mouse_hovering := false
 
 func _process(delta: float) -> void:
 	# Check for mouse hover
-	if is_highlighted and get_global_mouse_position().distance_to(global_position) < FONT_SIZE:
-		hovered.emit(name)
-		_unhighlight()
+	if get_global_mouse_position().distance_to(global_position) < FONT_SIZE:
+		# Hovering
+		if is_highlighted and not was_mouse_hovering:
+			_unhighlight()
+			hovered.emit(name)
+		was_mouse_hovering = true
+	else:
+		was_mouse_hovering = false
 
 
 func _draw() -> void:

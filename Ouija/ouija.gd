@@ -24,9 +24,7 @@ func _on_letter_hovered(letter: String) -> void:
 	_move_to_letter(letter)
 	revealed.text = riddle.left(current_pos)
 	# Highlight the next letter
-	print("prev_letter: " + str(revealed.text.right(revealed.text.length() - 1)))
 	var next_letter := _get_next_letter()
-	print("next_letter: " + next_letter)
 	var char_node: OuijaLetter = get_node("%Letters").get_node(next_letter)
 	
 	char_node.highlight()
