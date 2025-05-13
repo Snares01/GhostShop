@@ -23,6 +23,10 @@ func _on_letter_hovered(letter: String) -> void:
 	# Reveal the riddle up to this letter
 	_move_to_letter(letter)
 	revealed.text = riddle.left(current_pos)
+	# Check if riddle is done
+	if current_pos >= riddle.length():
+		print("riddle finished!")
+		return
 	# Highlight the next letter
 	var next_letter := _get_next_letter()
 	var char_node: OuijaLetter = get_node("%Letters").get_node(next_letter)
@@ -34,7 +38,7 @@ func _get_next_letter() -> String:
 	var cur_pos := current_pos
 	var next_char := riddle.substr(cur_pos, 1).to_upper()
 	# Make sure next char is a valid letter
-	while (LETTERS.find(next_char) == -1 and cur_pos < riddle.length() - 1): # Not end of riddle
+	while (LETTERS.find(next_char) == -1 and cur_pos < riddle.length() - 1):
 		cur_pos += 1
 		next_char = riddle.substr(cur_pos, 1).to_upper()
 	return next_char
@@ -44,6 +48,6 @@ func _move_to_letter(letter: String) -> void:
 	current_pos += 1
 	var next_char := riddle.substr(current_pos, 1).to_upper()
 	# Make sure next char is a valid letter
-	while (LETTERS.find(next_char) == -1 and current_pos < riddle.length() - 1): # Not end of riddle
+	while (LETTERS.find(next_char) == -1 and current_pos < riddle.length() - 1):
 		current_pos += 1
 		next_char = riddle.substr(current_pos, 1).to_upper()
