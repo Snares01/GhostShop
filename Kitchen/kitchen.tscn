@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cxbtsr5fgh1ki" path="res://Kitchen/kitchen.gd" id="1_hoq2g"]
 [ext_resource type="Script" uid="uid://bxk0bkj6x4fft" path="res://Kitchen/soda_machine.gd" id="2_0gnlc"]
-[ext_resource type="Texture2D" uid="uid://biyccjwuflnq3" path="res://icon.svg" id="3_k2udy"]
+[ext_resource type="Texture2D" uid="uid://mocq4u4edp63" path="res://Kitchen/soda_fountain.png" id="3_hoq2g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1p2wp"]
-size = Vector2(112, 104)
+size = Vector2(71, 126)
 
 [node name="Kitchen" type="Node2D"]
 script = ExtResource("1_hoq2g")
@@ -16,10 +16,11 @@ script = ExtResource("2_0gnlc")
 
 [node name="Sprite" type="Sprite2D" parent="Soda_Machine"]
 position = Vector2(-2, 0)
-texture = ExtResource("3_k2udy")
+scale = Vector2(4, 3.5)
+texture = ExtResource("3_hoq2g")
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Soda_Machine"]
-position = Vector2(-2, -4)
+position = Vector2(-3.5, 3)
 shape = SubResource("RectangleShape2D_1p2wp")
 metadata/_edit_lock_ = true
