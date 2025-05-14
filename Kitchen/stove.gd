@@ -1,7 +1,7 @@
 extends Area2D
-class_name SodaMachine
+class_name Stove
 
-const CUP := preload("res://Kitchen/cup.tscn")
+const SPATULA := preload("res://Kitchen/spatula.tscn")
 var is_mouse_hovering: bool = false
 
 func _ready() -> void:
@@ -18,9 +18,6 @@ func _on_mouse_exited() -> void:
 func _process(delta: float) -> void:
 	if is_mouse_hovering and Input.is_action_just_pressed("select"):
 		if not ItemManager.is_holding():
-			var instance := CUP.instantiate()
+			var instance := SPATULA.instantiate()
 			add_child(instance)
 			ItemManager.hold_item(instance)
-		
-
-		

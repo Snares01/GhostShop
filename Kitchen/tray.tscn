@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bofxjdq8pt5r3"]
+
+[ext_resource type="Texture2D" uid="uid://dmfnl5exmklw0" path="res://Kitchen/tray.png" id="1_tehm5"]
+[ext_resource type="Script" uid="uid://bp1os4inoh3wd" path="res://Kitchen/tray.gd" id="2_3ashf"]
+
+[node name="Tray" type="Sprite2D"]
+z_index = 10
+z_as_relative = false
+scale = Vector2(5, 5)
+texture = ExtResource("1_tehm5")
+region_enabled = true
+region_rect = Rect2(22.8997, 27.8997, 18.1123, 5.30203)
+script = ExtResource("2_3ashf")

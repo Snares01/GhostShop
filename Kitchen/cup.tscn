@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://u66cxhdu7l6i" path="res://Kitchen/cup.gd" id="2_mjp55"]
 
 [node name="Cup" type="Sprite2D"]
+z_index = 10
+z_as_relative = false
 scale = Vector2(3, 3)
 texture = ExtResource("1_anb2x")
 script = ExtResource("2_mjp55")

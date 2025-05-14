@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://blvptkscfgxt0"]
+
+[ext_resource type="Texture2D" uid="uid://fbycc7746dfo" path="res://Kitchen/spatula.png" id="1_6yl2h"]
+[ext_resource type="Script" uid="uid://jecfurrrllf1" path="res://Kitchen/spatula.gd" id="2_0fipv"]
+
+[node name="Spatula" type="Sprite2D"]
+z_index = 10
+z_as_relative = false
+scale = Vector2(5, 5)
+texture = ExtResource("1_6yl2h")
+region_enabled = true
+region_rect = Rect2(39.9517, 22.9848, 3.06746, 6.0216)
+script = ExtResource("2_0fipv")
