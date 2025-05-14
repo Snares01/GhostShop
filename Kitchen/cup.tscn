@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddw3uw7yqc3ip"]
+
+[ext_resource type="Texture2D" uid="uid://biyccjwuflnq3" path="res://icon.svg" id="1_anb2x"]
+[ext_resource type="Script" uid="uid://u66cxhdu7l6i" path="res://Kitchen/cup.gd" id="2_mjp55"]
+
+[node name="Cup" type="Sprite2D"]
+scale = Vector2(0.1, 0.2)
+texture = ExtResource("1_anb2x")
+script = ExtResource("2_mjp55")
