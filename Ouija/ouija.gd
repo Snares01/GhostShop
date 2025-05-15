@@ -1,35 +1,40 @@
 extends Node2D
 class_name Ouija
 
+signal update_order(text: String, finished: bool)
+
 const LETTERS := "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-var riddle := "I'm thirsty now, so hear my plea\nFill up a cup that's tall for me"
+var riddle := "I'm thirsty now, so hear my plea;\nFill up a cup that's tall for me"
 var current_pos := 0 # Position in riddle string
 var prev_char: String
 
-@onready var revealed: Label = get_node("%Revealed")
+@onready var board: Node2D = get_node("%Board")
 
 func _ready() -> void:
-	for child: OuijaLetter in get_node("%Letters").get_children():
+	for child: OuijaLetter in board.get_children():
 		child.hovered.connect(_on_letter_hovered)
 	# Highlight first character to start
 	#update_board()
 	var first_char := riddle.left(1).to_upper()
-	var char_node: OuijaLetter = get_node("%Letters").get_node(first_char)
+	var char_node: OuijaLetter = board.get_node(first_char)
 	char_node.highlight()
 
 # Signal
 func _on_letter_hovered(letter: String) -> void:
 	# Reveal the riddle up to this letter
 	_move_to_letter(letter)
-	revealed.text = riddle.left(current_pos)
+	
 	# Check if riddle is done
 	if current_pos >= riddle.length():
-		print("riddle finished!")
+		# Riddle finished
+		update_order.emit(riddle, true)
 		return
+	else:
+		update_order.emit(riddle.left(current_pos), false)
 	# Highlight the next letter
 	var next_letter := _get_next_letter()
-	var char_node: OuijaLetter = get_node("%Letters").get_node(next_letter)
+	var char_node: OuijaLetter = board.get_node(next_letter)
 	
 	char_node.highlight()
 

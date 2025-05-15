@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dna1a8xfm1i5c"
-path="res://.godot/imported/RulerGold.ttf-a41144cf501336d363506e748ab9b0b4.fontdata"
+path="res://.godot/imported/RulerGold.ttf-cd9186625e69938d0662e797da53629d.fontdata"
 
 [deps]
 
-source_file="res://RulerGold.ttf"
-dest_files=["res://.godot/imported/RulerGold.ttf-a41144cf501336d363506e748ab9b0b4.fontdata"]
+source_file="res://UI/RulerGold.ttf"
+dest_files=["res://.godot/imported/RulerGold.ttf-cd9186625e69938d0662e797da53629d.fontdata"]
 
 [params]
 

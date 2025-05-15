@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://r2guagpqs23y"]
+
+[ext_resource type="Script" uid="uid://c4nvvvimpjfhh" path="res://UI/ui.gd" id="1_2fwl4"]
+[ext_resource type="PackedScene" uid="uid://v8em7euggjff" path="res://UI/order_ticket.tscn" id="2_dajm1"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2fwl4")
+
+[node name="SidePanel" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="OrderTicket" parent="SidePanel" instance=ExtResource("2_dajm1")]
+layout_mode = 2
