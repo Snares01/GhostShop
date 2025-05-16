@@ -1,4 +1,4 @@
-extends Node2D
+extends Scene
 class_name Ouija
 
 signal update_order(text: String, finished: bool)
