@@ -3,7 +3,7 @@ class_name OuijaLetter
 # Node name is expected to be a character
 signal hovered(letter: String)
 
-const FONT := preload("res://RulerGold.ttf")
+const FONT := preload("res://UI/RulerGold.ttf")
 const FONT_SIZE := 32
 
 var is_highlighted := false

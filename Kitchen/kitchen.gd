@@ -1,2 +1,2 @@
-extends Node2D
+extends Scene
 class_name Kitchen
