@@ -6,3 +6,4 @@ class_name Kitchen
 
 func _ready() -> void:
 	soda_machine.size_selected.connect(soda_minigame._on_game_start)
+	soda_minigame.ended.connect(soda_machine._on_game_end)

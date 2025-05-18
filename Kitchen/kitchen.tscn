@@ -6,18 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://c6wxpj8qwetfb" path="res://Kitchen/stove.png" id="4_0gnlc"]
 [ext_resource type="Script" uid="uid://bwg3bpfim301v" path="res://Kitchen/stove.gd" id="4_k2udy"]
 [ext_resource type="PackedScene" uid="uid://c6tiude2a5yd8" path="res://Kitchen/soda_minigame.tscn" id="5_nnish"]
+[ext_resource type="Texture2D" uid="uid://mqe8uag1wku8" path="res://Kitchen/soda_cup.png" id="5_qlbxo"]
 [ext_resource type="Texture2D" uid="uid://dx1ch7b8ivkqp" path="res://Kitchen/assembly.png" id="6_1p2wp"]
-[ext_resource type="Script" uid="uid://c3awkym6sbut6" path="res://Kitchen/assembly.gd" id="6_q3no0"]
 [ext_resource type="Texture2D" uid="uid://qe8rjjp037fb" path="res://Kitchen/counter.png" id="8_o602f"]
+[ext_resource type="PackedScene" uid="uid://ciu3oj5fwnccy" path="res://plate.tscn" id="9_qlbxo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1p2wp"]
 size = Vector2(71, 126)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k2udy"]
 size = Vector2(240, 78)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3no0"]
-size = Vector2(330.5, 81.5)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nnish"]
 
@@ -38,9 +36,14 @@ metadata/_edit_lock_ = true
 
 [node name="Machine" type="Sprite2D" parent="SodaMachine"]
 position = Vector2(-2, 0)
-scale = Vector2(4, 3.5)
+scale = Vector2(4, 4)
 texture = ExtResource("3_hoq2g")
 metadata/_edit_lock_ = true
+
+[node name="Cup" type="Sprite2D" parent="SodaMachine"]
+position = Vector2(-11, 47)
+scale = Vector2(4, 4)
+texture = ExtResource("5_qlbxo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SodaMachine"]
 position = Vector2(-3.5, 3)
@@ -101,21 +104,6 @@ position = Vector2(-146, 30)
 shape = SubResource("RectangleShape2D_k2udy")
 metadata/_edit_lock_ = true
 
-[node name="Assembly" type="Area2D" parent="."]
-position = Vector2(1, 17)
-script = ExtResource("6_q3no0")
-
-[node name="Sprite2D" type="Sprite2D" parent="Assembly"]
-position = Vector2(173, 126)
-scale = Vector2(5.42969, 4.38672)
-texture = ExtResource("6_1p2wp")
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Assembly"]
-position = Vector2(173.75, 154.25)
-shape = SubResource("RectangleShape2D_q3no0")
-metadata/_edit_lock_ = true
-
 [node name="KitchenUI" type="CanvasLayer" parent="."]
 
 [node name="MarginContainer" type="MarginContainer" parent="KitchenUI"]
@@ -129,6 +117,7 @@ theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
+metadata/_edit_lock_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="KitchenUI/MarginContainer"]
 clip_contents = true
@@ -138,6 +127,18 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_nnish")
+metadata/_edit_lock_ = true
 
 [node name="SodaMinigame" parent="KitchenUI/MarginContainer/PanelContainer" instance=ExtResource("5_nnish")]
 unique_name_in_owner = true
+
+[node name="Assembly" type="Node2D" parent="."]
+
+[node name="Assembly" type="Sprite2D" parent="Assembly"]
+position = Vector2(174, 143)
+scale = Vector2(5.42969, 4.38672)
+texture = ExtResource("6_1p2wp")
+metadata/_edit_lock_ = true
+
+[node name="Plate" parent="Assembly" instance=ExtResource("9_qlbxo")]
+position = Vector2(174, 143)

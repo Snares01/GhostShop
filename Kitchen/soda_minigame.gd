@@ -1,7 +1,7 @@
 extends Node2D
 class_name SodaMinigame
 
-signal ended()
+signal ended(distance : float)
 
 const OFFSET := Vector2(100, 200)
 const GOAL_LINE := 100.0
@@ -38,8 +38,9 @@ func _unhandled_input(event: InputEvent) -> void:
 			print(abs(GOAL_LINE - fill_height))
 			minigame_ended = true
 			await get_tree().create_timer(1).timeout
-			ended.emit()
+			ended.emit(abs(GOAL_LINE - fill_height))
 			hide()
+			fill_height = 0
 		else:
 			is_filling = true
 

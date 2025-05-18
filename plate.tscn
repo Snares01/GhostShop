@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://ciu3oj5fwnccy"]
+
+[ext_resource type="Script" uid="uid://begfxsml65w2w" path="res://plate.gd" id="1_uw33f"]
+[ext_resource type="Texture2D" uid="uid://dmfnl5exmklw0" path="res://Kitchen/tray.png" id="2_g4jty"]
+[ext_resource type="Texture2D" uid="uid://mqe8uag1wku8" path="res://Kitchen/soda_cup.png" id="3_g4jty"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcf13"]
+size = Vector2(75, 29)
+
+[node name="Plate" type="Area2D"]
+script = ExtResource("1_uw33f")
+
+[node name="Plate" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("2_g4jty")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, -5.5)
+shape = SubResource("RectangleShape2D_jcf13")
+
+[node name="Cup" type="Sprite2D" parent="."]
+position = Vector2(18, -21)
+scale = Vector2(4, 4)
+texture = ExtResource("3_g4jty")
+
+[node name="Confirm" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -78.0
+offset_right = 41.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Confirm"]
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="Confirm/VBoxContainer"]
+layout_mode = 2
+text = "Send plate?"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Confirm/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="Yes" type="Button" parent="Confirm/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Yes"
+metadata/_edit_lock_ = true
+
+[node name="No" type="Button" parent="Confirm/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "No"
+metadata/_edit_lock_ = true
