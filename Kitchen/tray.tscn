@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bofxjdq8pt5r3"]
 
 [ext_resource type="Texture2D" uid="uid://dmfnl5exmklw0" path="res://Kitchen/tray.png" id="1_tehm5"]
-[ext_resource type="Script" uid="uid://bp1os4inoh3wd" path="res://Kitchen/tray.gd" id="2_3ashf"]
+[ext_resource type="Script" uid="uid://d0gq5uy3qp6dh" path="res://Kitchen/draggable.gd" id="2_3ashf"]
 
 [node name="Tray" type="Sprite2D"]
 z_index = 10

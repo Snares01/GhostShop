@@ -1,11 +1,11 @@
 extends Node
 
-var held_item: Node = null
+var held_item: Draggable = null
 
 func is_holding() -> bool:
 	return held_item != null
 
-func hold_item(item: Node) -> void:
+func hold_item(item: Draggable) -> void:
 	held_item = item
 
 func _input(event):

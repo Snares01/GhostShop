@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://blvptkscfgxt0"]
 
 [ext_resource type="Texture2D" uid="uid://fbycc7746dfo" path="res://Kitchen/spatula.png" id="1_6yl2h"]
-[ext_resource type="Script" uid="uid://jecfurrrllf1" path="res://Kitchen/spatula.gd" id="2_0fipv"]
+[ext_resource type="Script" uid="uid://d0gq5uy3qp6dh" path="res://Kitchen/draggable.gd" id="2_0fipv"]
 
 [node name="Spatula" type="Sprite2D"]
 z_index = 10

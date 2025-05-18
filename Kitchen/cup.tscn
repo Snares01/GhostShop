@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://ddw3uw7yqc3ip"]
 
 [ext_resource type="Texture2D" uid="uid://mqe8uag1wku8" path="res://Kitchen/soda_cup.png" id="1_anb2x"]
-[ext_resource type="Script" uid="uid://u66cxhdu7l6i" path="res://Kitchen/cup.gd" id="2_mjp55"]
+[ext_resource type="Script" uid="uid://d0gq5uy3qp6dh" path="res://Kitchen/draggable.gd" id="2_anb2x"]
 
 [node name="Cup" type="Sprite2D"]
 z_index = 10
 z_as_relative = false
 scale = Vector2(3, 3)
 texture = ExtResource("1_anb2x")
-script = ExtResource("2_mjp55")
+script = ExtResource("2_anb2x")
