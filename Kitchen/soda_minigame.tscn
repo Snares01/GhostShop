@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6tiude2a5yd8"]
+
+[ext_resource type="Script" uid="uid://cgn17cg7hejyn" path="res://Kitchen/soda_minigame.gd" id="1_xj8ne"]
+
+[node name="SodaMinigame" type="Node2D"]
+script = ExtResource("1_xj8ne")

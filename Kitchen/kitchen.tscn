@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bxv6nxdoo73h7"]
+[gd_scene load_steps=14 format=3 uid="uid://bxv6nxdoo73h7"]
 
 [ext_resource type="Script" uid="uid://cxbtsr5fgh1ki" path="res://Kitchen/kitchen.gd" id="1_hoq2g"]
 [ext_resource type="Script" uid="uid://bxk0bkj6x4fft" path="res://Kitchen/soda_machine.gd" id="2_0gnlc"]
 [ext_resource type="Texture2D" uid="uid://mocq4u4edp63" path="res://Kitchen/soda_fountain.png" id="3_hoq2g"]
 [ext_resource type="Texture2D" uid="uid://c6wxpj8qwetfb" path="res://Kitchen/stove.png" id="4_0gnlc"]
 [ext_resource type="Script" uid="uid://bwg3bpfim301v" path="res://Kitchen/stove.gd" id="4_k2udy"]
+[ext_resource type="PackedScene" uid="uid://c6tiude2a5yd8" path="res://Kitchen/soda_minigame.tscn" id="5_nnish"]
 [ext_resource type="Texture2D" uid="uid://dx1ch7b8ivkqp" path="res://Kitchen/assembly.png" id="6_1p2wp"]
 [ext_resource type="Script" uid="uid://c3awkym6sbut6" path="res://Kitchen/assembly.gd" id="6_q3no0"]
 [ext_resource type="Texture2D" uid="uid://qe8rjjp037fb" path="res://Kitchen/counter.png" id="8_o602f"]
@@ -18,14 +19,16 @@ size = Vector2(240, 78)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q3no0"]
 size = Vector2(330.5, 81.5)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nnish"]
+
 [node name="Kitchen" type="Node2D"]
 script = ExtResource("1_hoq2g")
 
-[node name="Soda_Machine" type="Area2D" parent="."]
+[node name="SodaMachine" type="Area2D" parent="."]
 position = Vector2(1113, 72)
 script = ExtResource("2_0gnlc")
 
-[node name="Counter" type="Sprite2D" parent="Soda_Machine"]
+[node name="Counter" type="Sprite2D" parent="SodaMachine"]
 position = Vector2(-15, 101)
 scale = Vector2(4.38281, 4.48438)
 texture = ExtResource("8_o602f")
@@ -33,51 +36,51 @@ region_enabled = true
 region_rect = Rect2(39.3349, 27.7249, 24.6651, 20.626)
 metadata/_edit_lock_ = true
 
-[node name="Machine" type="Sprite2D" parent="Soda_Machine"]
+[node name="Machine" type="Sprite2D" parent="SodaMachine"]
 position = Vector2(-2, 0)
 scale = Vector2(4, 3.5)
 texture = ExtResource("3_hoq2g")
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Soda_Machine"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SodaMachine"]
 position = Vector2(-3.5, 3)
 shape = SubResource("RectangleShape2D_1p2wp")
 metadata/_edit_lock_ = true
 
-[node name="SizeOptions" type="PanelContainer" parent="Soda_Machine"]
+[node name="SizeOptions" type="PanelContainer" parent="SodaMachine"]
 visible = false
 offset_left = -36.0
 offset_top = -44.0
 offset_right = 29.0
 offset_bottom = -13.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Soda_Machine/SizeOptions"]
+[node name="VBoxContainer" type="VBoxContainer" parent="SodaMachine/SizeOptions"]
 layout_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="Label" type="Label" parent="Soda_Machine/SizeOptions/VBoxContainer"]
+[node name="Label" type="Label" parent="SodaMachine/SizeOptions/VBoxContainer"]
 layout_mode = 2
 text = "Size?"
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Soda_Machine/SizeOptions/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="SodaMachine/SizeOptions/VBoxContainer"]
 layout_mode = 2
 metadata/_edit_lock_ = true
 
-[node name="Small" type="Button" parent="Soda_Machine/SizeOptions/VBoxContainer/HBoxContainer"]
+[node name="Small" type="Button" parent="SodaMachine/SizeOptions/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "S"
 metadata/_edit_lock_ = true
 
-[node name="Medium" type="Button" parent="Soda_Machine/SizeOptions/VBoxContainer/HBoxContainer"]
+[node name="Medium" type="Button" parent="SodaMachine/SizeOptions/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "M"
 metadata/_edit_lock_ = true
 
-[node name="Large" type="Button" parent="Soda_Machine/SizeOptions/VBoxContainer/HBoxContainer"]
+[node name="Large" type="Button" parent="SodaMachine/SizeOptions/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "L"
@@ -112,3 +115,29 @@ metadata/_edit_lock_ = true
 position = Vector2(173.75, 154.25)
 shape = SubResource("RectangleShape2D_q3no0")
 metadata/_edit_lock_ = true
+
+[node name="KitchenUI" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="KitchenUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="KitchenUI/MarginContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nnish")
+
+[node name="SodaMinigame" parent="KitchenUI/MarginContainer/PanelContainer" instance=ExtResource("5_nnish")]
+unique_name_in_owner = true

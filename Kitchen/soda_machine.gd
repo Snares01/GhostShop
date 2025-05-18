@@ -1,6 +1,8 @@
 extends Area2D
 class_name SodaMachine
 
+signal size_selected(size: Size)
+
 const CUP := preload("res://Kitchen/cup.tscn")
 var is_mouse_hovering: bool = false
 enum Size {
@@ -27,14 +29,10 @@ func _process(delta: float) -> void:
 		$SizeOptions.show()
 
 func _on_small_selected() -> void:
-	_on_size_selected(Size.SMALL)
+	size_selected.emit(Size.SMALL)
 
 func _on_medium_selected() -> void:
-	_on_size_selected(Size.MEDIUM)
+	size_selected.emit(Size.MEDIUM)
 
 func _on_large_selected() -> void:
-	_on_size_selected(Size.LARGE)
-
-func _on_size_selected(size: Size) -> void:
-	pass
-	
+	size_selected.emit(Size.LARGE)
