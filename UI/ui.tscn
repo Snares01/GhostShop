@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://r2guagpqs23y"]
+[gd_scene load_steps=4 format=3 uid="uid://r2guagpqs23y"]
 
 [ext_resource type="Script" uid="uid://c4nvvvimpjfhh" path="res://UI/ui.gd" id="1_2fwl4"]
 [ext_resource type="PackedScene" uid="uid://v8em7euggjff" path="res://UI/order_ticket.tscn" id="2_dajm1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dajm1"]
+bg_color = Color(0.41598, 0.41598, 0.41598, 1)
+border_width_top = 5
+border_width_bottom = 5
+border_color = Color(0.415686, 0.415686, 0.415686, 1)
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -10,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_2fwl4")
 
 [node name="SidePanel" type="PanelContainer" parent="."]
@@ -22,5 +29,37 @@ anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
 
-[node name="OrderTicket" parent="SidePanel" instance=ExtResource("2_dajm1")]
+[node name="VBoxContainer" type="VBoxContainer" parent="SidePanel"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="SidePanel/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dajm1")
+
+[node name="Scenes" type="HBoxContainer" parent="SidePanel/VBoxContainer/PanelContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Ouija" type="Button" parent="SidePanel/VBoxContainer/PanelContainer/Scenes"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Ouija"
+
+[node name="Kitchen" type="Button" parent="SidePanel/VBoxContainer/PanelContainer/Scenes"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Kitchen"
+
+[node name="ServingCounter" type="Button" parent="SidePanel/VBoxContainer/PanelContainer/Scenes"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Serving
+Counter"
+
+[node name="CenterContainer" type="CenterContainer" parent="SidePanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="OrderTicket" parent="SidePanel/VBoxContainer/CenterContainer" instance=ExtResource("2_dajm1")]
+unique_name_in_owner = true
 layout_mode = 2

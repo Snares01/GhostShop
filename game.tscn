@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1b0xa5p07tny"]
+[gd_scene load_steps=6 format=3 uid="uid://c1b0xa5p07tny"]
 
 [ext_resource type="Script" uid="uid://k2l5lx6kqdh6" path="res://game.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://r2guagpqs23y" path="res://UI/ui.tscn" id="2_feb5d"]
 [ext_resource type="PackedScene" uid="uid://dkqk8g2d0yjys" path="res://Ouija/ouija.tscn" id="3_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://bxv6nxdoo73h7" path="res://Kitchen/kitchen.tscn" id="4_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://5lhw1yareii1" path="res://ServingCounter/serving_counter.tscn" id="5_7jktm"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_80nbo")
@@ -16,3 +18,11 @@ script = ExtResource("1_80nbo")
 [node name="Scenes" type="Node2D" parent="."]
 
 [node name="Ouija" parent="Scenes" instance=ExtResource("3_fc0e3")]
+unique_name_in_owner = true
+
+[node name="Kitchen" parent="Scenes" instance=ExtResource("4_fc0e3")]
+unique_name_in_owner = true
+visible = false
+
+[node name="ServingCounter" parent="Scenes" instance=ExtResource("5_7jktm")]
+unique_name_in_owner = true

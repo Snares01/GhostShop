@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://mqe8uag1wku8" path="res://Kitchen/soda_cup.png" id="5_qlbxo"]
 [ext_resource type="Texture2D" uid="uid://dx1ch7b8ivkqp" path="res://Kitchen/assembly.png" id="6_1p2wp"]
 [ext_resource type="Texture2D" uid="uid://qe8rjjp037fb" path="res://Kitchen/counter.png" id="8_o602f"]
-[ext_resource type="PackedScene" uid="uid://ciu3oj5fwnccy" path="res://plate.tscn" id="9_qlbxo"]
+[ext_resource type="PackedScene" path="res://plate.tscn" id="9_qlbxo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1p2wp"]
 size = Vector2(71, 126)
@@ -23,7 +23,7 @@ size = Vector2(240, 78)
 script = ExtResource("1_hoq2g")
 
 [node name="SodaMachine" type="Area2D" parent="."]
-position = Vector2(1113, 72)
+position = Vector2(217, -99)
 script = ExtResource("2_0gnlc")
 
 [node name="Counter" type="Sprite2D" parent="SodaMachine"]
@@ -90,7 +90,7 @@ text = "L"
 metadata/_edit_lock_ = true
 
 [node name="Stove" type="Area2D" parent="."]
-position = Vector2(843, 147)
+position = Vector2(106, -26)
 script = ExtResource("4_k2udy")
 
 [node name="Sprite2D" type="Sprite2D" parent="Stove"]
@@ -102,6 +102,23 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stove"]
 position = Vector2(-146, 30)
 shape = SubResource("RectangleShape2D_k2udy")
+metadata/_edit_lock_ = true
+
+[node name="Assembly" type="Node2D" parent="."]
+position = Vector2(-558, -168)
+
+[node name="Assembly" type="Sprite2D" parent="Assembly"]
+position = Vector2(174, 143)
+scale = Vector2(5.42969, 4.38672)
+texture = ExtResource("6_1p2wp")
+metadata/_edit_lock_ = true
+
+[node name="Plate" parent="Assembly" instance=ExtResource("9_qlbxo")]
+position = Vector2(161, 149)
+metadata/_edit_lock_ = true
+
+[node name="Plate2" parent="Assembly" instance=ExtResource("9_qlbxo")]
+position = Vector2(270, 149)
 metadata/_edit_lock_ = true
 
 [node name="KitchenUI" type="CanvasLayer" parent="."]
@@ -131,14 +148,3 @@ metadata/_edit_lock_ = true
 
 [node name="SodaMinigame" parent="KitchenUI/MarginContainer/PanelContainer" instance=ExtResource("5_nnish")]
 unique_name_in_owner = true
-
-[node name="Assembly" type="Node2D" parent="."]
-
-[node name="Assembly" type="Sprite2D" parent="Assembly"]
-position = Vector2(174, 143)
-scale = Vector2(5.42969, 4.38672)
-texture = ExtResource("6_1p2wp")
-metadata/_edit_lock_ = true
-
-[node name="Plate" parent="Assembly" instance=ExtResource("9_qlbxo")]
-position = Vector2(174, 143)
