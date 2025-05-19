@@ -24,3 +24,6 @@ func release_item() -> void:
 
 func get_item_type() -> Draggable.Type:
 	return _held_item.type
+
+func get_item_rating() -> float:
+	return _held_item.rating

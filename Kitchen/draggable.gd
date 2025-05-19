@@ -7,6 +7,7 @@ enum Type {
 }
 
 @export var type: Type
+var rating: float
 
 func _process(delta: float) -> void:
 	global_position = get_global_mouse_position() 

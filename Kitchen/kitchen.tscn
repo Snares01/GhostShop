@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://mqe8uag1wku8" path="res://Kitchen/soda_cup.png" id="5_qlbxo"]
 [ext_resource type="Texture2D" uid="uid://dx1ch7b8ivkqp" path="res://Kitchen/assembly.png" id="6_1p2wp"]
 [ext_resource type="Texture2D" uid="uid://qe8rjjp037fb" path="res://Kitchen/counter.png" id="8_o602f"]
-[ext_resource type="PackedScene" path="res://plate.tscn" id="9_qlbxo"]
+[ext_resource type="PackedScene" uid="uid://b6ifddj7sc5dh" path="res://plate.tscn" id="9_qlbxo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1p2wp"]
 size = Vector2(71, 126)

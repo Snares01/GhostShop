@@ -6,6 +6,7 @@ signal size_selected(size: Size)
 const CUP := preload("res://Kitchen/cup.tscn")
 var is_mouse_hovering: bool = false
 var is_cup_ready: bool = false
+var cup_rating: float
 enum Size {
 	SMALL,
 	MEDIUM,
@@ -31,6 +32,7 @@ func _process(delta: float) -> void:
 		if is_cup_ready:
 			$Cup.hide()
 			var instance := CUP.instantiate()
+			instance.rating = cup_rating
 			add_child(instance)
 			is_cup_ready = false
 			ItemManager.hold_item(instance)
@@ -51,4 +53,5 @@ func _on_large_selected() -> void:
 
 func _on_game_end(distance: float) -> void:
 	is_cup_ready = true
+	cup_rating = distance
 	$Cup.show()

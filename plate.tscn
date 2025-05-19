@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ciu3oj5fwnccy"]
+[gd_scene load_steps=5 format=3 uid="uid://b6ifddj7sc5dh"]
 
 [ext_resource type="Script" uid="uid://begfxsml65w2w" path="res://plate.gd" id="1_uw33f"]
 [ext_resource type="Texture2D" uid="uid://dmfnl5exmklw0" path="res://Kitchen/tray.png" id="2_g4jty"]
