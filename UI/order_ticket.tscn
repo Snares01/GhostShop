@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://v8em7euggjff"]
+[gd_scene load_steps=5 format=3 uid="uid://v8em7euggjff"]
 
 [ext_resource type="Theme" uid="uid://dv3rjiwm5bjaw" path="res://UI/default_theme.tres" id="1_3e2f8"]
 [ext_resource type="Script" uid="uid://b3dgqlqkdxo0p" path="res://UI/order_ticket.gd" id="1_g3eij"]
 [ext_resource type="FontFile" uid="uid://dna1a8xfm1i5c" path="res://UI/RulerGold.ttf" id="2_lr4fj"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_3e2f8"]
+font = ExtResource("2_lr4fj")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
 [node name="OrderTicket" type="PanelContainer"]
+clip_contents = true
 custom_minimum_size = Vector2(250, 400)
 offset_right = 40.0
 offset_bottom = 40.0
@@ -20,6 +26,5 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_lr4fj")
-theme_override_font_sizes/font_size = 32
+label_settings = SubResource("LabelSettings_3e2f8")
 autowrap_mode = 2

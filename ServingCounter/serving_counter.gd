@@ -1,7 +1,7 @@
 extends Scene
 class_name ServingCounter
 
-const OFFSET_DIFFERENCE := 80.0
+const OFFSET_DIFFERENCE := 100.0
 
 var plate_offset := Vector2(-OFFSET_DIFFERENCE * 3.0, 0.0)
 
